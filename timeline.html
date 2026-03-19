@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>風格編年史</title>
+
+  <!-- TimelineJS3 -->
+  <link rel="stylesheet" href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
+  <script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      background: #191919;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    #timeline-embed {
+      width: 100%;
+      height: 100vh;
+    }
+
+    /* 整體時間軸背景 */
+    .tl-timeline {
+      background-color: #191919 !important;
+      font-family: inherit !important;
+    }
+
+    /* 頂部卡片區背景 */
+    .tl-slidenav-next,
+    .tl-slidenav-previous,
+    .tl-slider-container-mask,
+    .tl-slider,
+    .tl-slide-content,
+    .tl-slide {
+      background-color: #191919 !important;
+    }
+
+    /* 底部時間導航欄 */
+    .tl-timenav {
+      background-color: #111111 !important;
+      border-top: 1px solid #333 !important;
+    }
+
+    .tl-timenav-slider {
+      background-color: #111111 !important;
+    }
+
+    .tl-timenav-background {
+      background-color: #111111 !important;
+    }
+
+    /* 時間刻度線 */
+    .tl-timegroup-message {
+      background-color: #191919 !important;
+      color: #888 !important;
+    }
+
+    /* 標題文字顏色 */
+    .tl-headline,
+    .tl-headline-date,
+    .tl-slide-content-container .tl-headline {
+      color: #ffffff !important;
+    }
+
+    /* 內文顏色 */
+    .tl-text p, .tl-text-content {
+      color: #cccccc !important;
+    }
+
+    /* 時間刻度文字 */
+    .tl-timenav .tl-timemarker-content-container,
+    .tl-timenav .tl-timemarker-timespan-content {
+      color: #888888 !important;
+    }
+
+    /* 箭頭按鈕 */
+    .tl-slidenav-next .tl-slidenav-icon,
+    .tl-slidenav-previous .tl-slidenav-icon {
+      color: #555 !important;
+    }
+
+    .tl-slidenav-next:hover .tl-slidenav-icon,
+    .tl-slidenav-previous:hover .tl-slidenav-icon {
+      color: #fff !important;
+    }
+  </style>
+</head>
+<body>
+  <div id="timeline-embed"></div>
+
+  <script>
+    // ★ 把下面這個網址換成你自己的 Google 試算表連結
+    var SPREADSHEET_URL = '在這裡貼上你的 Google 試算表連結';
+
+    window.timeline = new TL.Timeline(
+      'timeline-embed',
+      SPREADSHEET_URL,
+      {
+        default_bg_color: { r: 25, g: 25, b: 25 },
+        timenav_position: 'bottom',
+        optimal_tick_width: 100,
+        timenav_height_percentage: 20,
+        start_at_slide: 1
+      }
+    );
+  </script>
+</body>
+</html>
